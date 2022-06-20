@@ -83,7 +83,7 @@
   },
   "nano-staged": {
     "**/*": "prettier --ignore-unknown --ignore-path .gitignore --write",
-    "**/*.{js,ts}": "eslint --ignore-path .gitignore --fix",
+    "**/*.{js,ts}": "eslint --fix",
     "**/*.html": "stylelint --ignore-path .gitignore --fix",
     "src/{components,pages}/**/*.ts": "stylelint --ignore-path .gitignore --fix"
   },
