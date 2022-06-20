@@ -5,18 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import replace from '@rollup/plugin-replace';
-import { esbuildPlugin } from '@web/dev-server-esbuild';
-import { fromRollup } from '@web/dev-server-rollup';
-import postcssCustomMedia from 'postcss-custom-media';
-import postcssImport from 'postcss-import';
-import postcssPresetEnv from 'postcss-preset-env';
-import litcss from 'rollup-plugin-lit-css';
-import styles from 'rollup-plugin-styles';
+import replace from '@rollup/plugin-replace'
+import { esbuildPlugin } from '@web/dev-server-esbuild'
+import { fromRollup } from '@web/dev-server-rollup'
+import postcssCustomMedia from 'postcss-custom-media'
+import postcssImport from 'postcss-import'
+import postcssPresetEnv from 'postcss-preset-env'
+import litcss from 'rollup-plugin-lit-css'
+import styles from 'rollup-plugin-styles'
 
-const litcssPlugin = fromRollup(litcss);
-const stylesPlugin = fromRollup(styles);
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const litcssPlugin = fromRollup(litcss)
+const stylesPlugin = fromRollup(styles)
+const NODE_ENV = process.env.NODE_ENV || 'development'
 
 export default {
   port: 8080,
@@ -79,4 +79,4 @@ export default {
         ]
       : []),
   ],
-};
+}

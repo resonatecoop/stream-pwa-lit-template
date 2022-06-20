@@ -12,16 +12,16 @@ export const setMetaTag = (
 ) => {
   let element = document.head.querySelector(
     `meta[${attributeName}="${attributeValue}"]`
-  );
+  )
 
   if (!element) {
-    element = document.createElement('meta');
-    element.setAttribute(attributeName, attributeValue);
-    document.head.appendChild(element);
+    element = document.createElement('meta')
+    element.setAttribute(attributeName, attributeValue)
+    document.head.appendChild(element)
   }
 
-  element.setAttribute('content', content);
-};
+  element.setAttribute('content', content)
+}
 
 export const removeMetaTag = (
   attributeName: string,
@@ -29,21 +29,21 @@ export const removeMetaTag = (
 ) => {
   const element = document.head.querySelector(
     `meta[${attributeName}="${attributeValue}"]`
-  );
+  )
 
   if (element) {
-    document.head.removeChild(element);
+    document.head.removeChild(element)
   }
-};
+}
 
 export const setLinkTag = (rel: string, href: string) => {
-  let element = document.head.querySelector(`link[rel="${rel}"]`);
+  let element = document.head.querySelector(`link[rel="${rel}"]`)
 
   if (!element) {
-    element = document.createElement('link');
-    element.setAttribute('rel', rel);
-    document.head.appendChild(element);
+    element = document.createElement('link')
+    element.setAttribute('rel', rel)
+    document.head.appendChild(element)
   }
 
-  element.setAttribute('href', href);
-};
+  element.setAttribute('href', href)
+}

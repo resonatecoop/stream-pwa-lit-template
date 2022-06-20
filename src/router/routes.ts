@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type { Route, Context, Commands } from '@vaadin/router';
+import type { Route, Context, Commands } from '@vaadin/router'
 
 export const routes: Route[] = [
   {
     path: '/',
     name: 'home',
     action: (_context: Context, commands: Commands) => {
-      return commands.redirect('/discover');
+      return commands.redirect('/discover')
     },
   },
   {
@@ -22,14 +22,14 @@ export const routes: Route[] = [
         path: '/',
         component: 'page-user-list',
         action: async () => {
-          await import('../pages/page-user-list.js');
+          await import('../pages/page-user-list.js')
         },
       },
       {
         path: '/:user',
         component: 'page-user-profile',
         action: async () => {
-          await import('../pages/page-user-profile.js');
+          await import('../pages/page-user-profile.js')
         },
       },
     ],
@@ -39,7 +39,7 @@ export const routes: Route[] = [
     name: 'discover',
     component: 'page-discover',
     action: async () => {
-      await import('../pages/page-discover.js');
+      await import('../pages/page-discover.js')
     },
   },
   {
@@ -47,7 +47,7 @@ export const routes: Route[] = [
     name: 'about',
     component: 'page-about',
     action: async () => {
-      await import('../pages/page-about.js');
+      await import('../pages/page-about.js')
     },
   },
   {
@@ -55,7 +55,7 @@ export const routes: Route[] = [
     name: 'not-found',
     component: 'page-not-found',
     action: async () => {
-      await import('../pages/page-not-found.js');
+      await import('../pages/page-not-found.js')
     },
   },
-];
+]

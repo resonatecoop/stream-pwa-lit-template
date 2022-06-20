@@ -1,12 +1,12 @@
-import { LitElement, css, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-import tachyons from '../../style/main.module.css';
+import tachyons from '../../style/main.module.css'
 
 @customElement('lit-icon')
 export class LitIcon extends LitElement {
-  @property({ type: String }) name = 'logo';
-  @property({ type: String }) size = 'sm';
+  @property({ type: String }) name = 'logo'
+  @property({ type: String }) size = 'sm'
 
   static styles = [
     tachyons,
@@ -21,7 +21,7 @@ export class LitIcon extends LitElement {
         fill: currentcolor;
       }
     `,
-  ];
+  ]
 
   render() {
     return html`
@@ -31,6 +31,6 @@ export class LitIcon extends LitElement {
       >
         <use href="icons.svg#icon-${this.name}" />
       </svg>
-    `;
+    `
   }
 }

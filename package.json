@@ -88,7 +88,8 @@
     "src/{components,pages}/**/*.ts": "stylelint --ignore-path .gitignore --fix"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "semi": false
   },
   "simple-git-hooks": {
     "pre-commit": "./node_modules/.bin/nano-staged"

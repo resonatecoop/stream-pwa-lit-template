@@ -1,23 +1,23 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-import { urlForName } from '../../router/index.js';
-import tachyons from '../../style/main.module.css';
-import headerStyle from './header.module.css';
+import { urlForName } from '../../router/index.js'
+import tachyons from '../../style/main.module.css'
+import headerStyle from './header.module.css'
 
-import '../icon/icon.js';
+import '../icon/icon.js'
 
 @customElement('lit-header')
 export class LitHeader extends LitElement {
   @property({
     type: String,
     hasChanged(newVal: string, oldVal: string) {
-      return newVal?.toLowerCase() !== oldVal?.toLowerCase();
+      return newVal?.toLowerCase() !== oldVal?.toLowerCase()
     },
   })
-  pathname = '/';
+  pathname = '/'
 
-  static styles = [tachyons, headerStyle];
+  static styles = [tachyons, headerStyle]
 
   render() {
     return html`
@@ -173,6 +173,6 @@ export class LitHeader extends LitElement {
         </nav>
       </header>
       <slot></slot>
-    `;
+    `
   }
 }
