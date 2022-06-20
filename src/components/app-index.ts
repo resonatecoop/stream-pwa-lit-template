@@ -30,17 +30,17 @@ export class AppIndex extends LitElement implements BeforeEnterObserver {
   static styles = [
     tachyons,
     css`
+      :host {
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+      }
+
       /* FIX custom-media not working here */
       @media screen and (min-width: 60em) {
         :host {
           padding-top: 0;
         }
-      }
-
-      :host {
-        display: flex;
-        flex-direction: column;
-        padding-top: 2rem;
       }
     `,
   ];
