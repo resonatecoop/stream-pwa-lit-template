@@ -5,15 +5,41 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type { Route } from '@vaadin/router';
+import type { Route, Context, Commands } from '@vaadin/router';
 
 export const routes: Route[] = [
   {
     path: '/',
     name: 'home',
-    component: 'page-home',
+    action: (_context: Context, commands: Commands) => {
+      return commands.redirect('/discover');
+    },
+  },
+  {
+    path: '/users',
+    children: [
+      {
+        path: '/',
+        component: 'page-user-list',
+        action: async () => {
+          await import('../pages/page-user-list.js');
+        },
+      },
+      {
+        path: '/:user',
+        component: 'page-user-profile',
+        action: async () => {
+          await import('../pages/page-user-profile.js');
+        },
+      },
+    ],
+  },
+  {
+    path: '/discover',
+    name: 'discover',
+    component: 'page-discover',
     action: async () => {
-      await import('../pages/page-home.js');
+      await import('../pages/page-discover.js');
     },
   },
   {
