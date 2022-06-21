@@ -85,12 +85,6 @@ const config = merge(
               'nesting-rules': true,
             },
           }),
-          postcssPresetEnv({
-            stage: 3,
-            features: {
-              'nesting-rules': true,
-            },
-          }),
         ],
       }),
       litcss(),
