@@ -15,7 +15,17 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "allowJs": true,
-    "maxNodeModuleJsDepth": 2
+    "maxNodeModuleJsDepth": 2,
+    "noImplicitOverride": false,
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      },
+      {
+        "name": "ts-lit-plugin",
+        "strict": true
+      }
+    ]
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "@types/*.d.ts"]
 }

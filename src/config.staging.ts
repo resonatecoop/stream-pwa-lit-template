@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import config from './config.js';
+import config from './config.js'
 
 export default {
   ...config,
   environment: 'staging',
-};
+}

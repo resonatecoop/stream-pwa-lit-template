@@ -1,0 +1,5 @@
+node_modules/*
+@types/*
+rollup.config.js
+web-dev-server.config.mjs
+server/dist/

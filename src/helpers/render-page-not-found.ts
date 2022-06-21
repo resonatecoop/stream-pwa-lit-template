@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { html } from 'lit';
+import { html } from 'lit'
 
 // TODO: Review this issue https://github.com/vaadin/vaadin-router/issues/408
 
 export const renderPageNotFound = () => {
-  import('../pages/page-not-found.js');
+  import('../pages/page-not-found.js')
 
-  return html`<page-not-found></page-not-found>`;
-};
+  return html`<page-not-found></page-not-found>`
+}

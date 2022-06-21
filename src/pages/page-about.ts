@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { html, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { html, css } from 'lit'
+import { customElement } from 'lit/decorators.js'
 
-import { PageElement } from '../helpers/page-element.js';
+import { PageElement } from '../helpers/page-element.js'
 
 @customElement('page-about')
 export class PageAbout extends PageElement {
@@ -16,7 +16,7 @@ export class PageAbout extends PageElement {
     section {
       padding: 1rem;
     }
-  `;
+  `
 
   render() {
     return html`
@@ -30,13 +30,13 @@ export class PageAbout extends PageElement {
           minima!
         </p>
       </section>
-    `;
+    `
   }
 
   meta() {
     return {
       title: 'About',
       description: 'About page description',
-    };
+    }
   }
 }

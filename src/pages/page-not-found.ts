@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { html, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { html, css } from 'lit'
+import { customElement } from 'lit/decorators.js'
 
 import {
   PageElementNotFound,
   pageNotFoundMeta,
-} from '../helpers/page-element-not-found.js';
-import { urlForName } from '../router/index.js';
+} from '../helpers/page-element-not-found.js'
+import { urlForName } from '../router/index.js'
 
 @customElement('page-not-found')
 export class PageNotFound extends PageElementNotFound {
@@ -25,7 +25,7 @@ export class PageNotFound extends PageElementNotFound {
       padding: 1rem;
       text-align: center;
     }
-  `;
+  `
 
   render() {
     return html`
@@ -36,10 +36,10 @@ export class PageNotFound extends PageElementNotFound {
           <a href="${urlForName('home')}">Back to home</a>
         </p>
       </section>
-    `;
+    `
   }
 
   meta() {
-    return pageNotFoundMeta;
+    return pageNotFoundMeta
   }
 }
