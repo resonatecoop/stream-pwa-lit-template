@@ -8,9 +8,13 @@
 import { createSpaConfig } from '@open-wc/building-rollup'
 import replace from '@rollup/plugin-replace'
 import typescript from '@rollup/plugin-typescript'
+import postcss from 'rollup-plugin-postcss'
 import { copy } from '@web/rollup-plugin-copy'
 import merge from 'deepmerge'
 import { black, blue, bgWhite } from 'picocolors'
+import litcss from 'rollup-plugin-lit-css'
+import postcssPresetEnv from 'postcss-preset-env'
+import postcssImport from 'postcss-import'
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const DIST_PATH = 'server/dist/'
@@ -72,6 +76,24 @@ const config = merge(
         sourceMap: false,
         inlineSources: false,
       }),
+      postcss({
+        plugins: [
+          postcssImport(),
+          postcssPresetEnv({
+            stage: 3,
+            features: {
+              'nesting-rules': true,
+            },
+          }),
+          postcssPresetEnv({
+            stage: 3,
+            features: {
+              'nesting-rules': true,
+            },
+          }),
+        ],
+      }),
+      litcss(),
       replace({
         preventAssignment: true,
         values: {
