@@ -5,21 +5,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { createSpaConfig } from '@open-wc/building-rollup';
-import replace from '@rollup/plugin-replace';
-import typescript from '@rollup/plugin-typescript';
-import { copy } from '@web/rollup-plugin-copy';
-import merge from 'deepmerge';
-import { black, blue, bgWhite } from 'picocolors';
+import { createSpaConfig } from '@open-wc/building-rollup'
+import replace from '@rollup/plugin-replace'
+import typescript from '@rollup/plugin-typescript'
+import postcss from 'rollup-plugin-postcss'
+import { copy } from '@web/rollup-plugin-copy'
+import merge from 'deepmerge'
+import { black, blue, bgWhite } from 'picocolors'
+import litcss from 'rollup-plugin-lit-css'
+import postcssPresetEnv from 'postcss-preset-env'
+import postcssImport from 'postcss-import'
 
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const DIST_PATH = 'server/dist/';
-const GENERATE_SERVICE_WORKER = false;
+const NODE_ENV = process.env.NODE_ENV || 'development'
+const DIST_PATH = 'server/dist/'
+const GENERATE_SERVICE_WORKER = false
 
 const absoluteBaseUrl =
   NODE_ENV === 'production'
     ? 'https://pwa-lit-template.mybluemix.net'
-    : 'http://localhost:8000';
+    : 'http://localhost:8000'
 
 const workboxConfig = {
   sourcemap: false,
@@ -38,7 +42,7 @@ const workboxConfig = {
   ],
   skipWaiting: false,
   clientsClaim: false,
-};
+}
 
 const config = merge(
   createSpaConfig({
@@ -72,6 +76,18 @@ const config = merge(
         sourceMap: false,
         inlineSources: false,
       }),
+      postcss({
+        plugins: [
+          postcssImport(),
+          postcssPresetEnv({
+            stage: 3,
+            features: {
+              'nesting-rules': true,
+            },
+          }),
+        ],
+      }),
+      litcss(),
       replace({
         preventAssignment: true,
         values: {
@@ -97,13 +113,13 @@ const config = merge(
       }),
     ],
   }
-);
+)
 
 console.log(`${bgWhite(black(' Build information'.padEnd(60, ' ')))}
 
 ${blue('Name')}                   ${process.env.npm_package_name}
 ${blue('Environment')}            ${NODE_ENV}
 ${blue('Service Worker')}         ${GENERATE_SERVICE_WORKER}
-${blue('Version')}                v${process.env.npm_package_version}`);
+${blue('Version')}                v${process.env.npm_package_version}`)
 
-export default config;
+export default config
